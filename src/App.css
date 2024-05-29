@@ -1,4 +1,4 @@
-/* styles.css */
+/* App.css */
 
 body {
   font-family: Arial, sans-serif;
@@ -67,6 +67,23 @@ h1 {
   background: #ff1c1c;
 }
 
+.todo-item input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.todo-item .edit-save-button {
+  background: #28a745;
+  margin-right: 5px;
+}
+
+.todo-item .edit-save-button:hover {
+  background: #218838;
+}
+
 input[type="text"] {
   width: calc(100% - 80px);
   padding: 10px;
@@ -86,4 +103,8 @@ button {
 
 button:hover {
   background: #218838;
+}
+
+.add-task{
+  margin-top: 10px;
 }
