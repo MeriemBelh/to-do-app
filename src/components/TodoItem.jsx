@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
-function TodoItem({ task, deleteTask, toggleCompleted, editTask }) {
+function TodoItem({ task, deleteTask, completeTask, editTask }) {
   const [editMode, setEditMode] = useState(false);
-  const [text, setText] = useState(task.text);
+  const [text, setText] = useState(task.task);
 
   function handleChange() {
-    toggleCompleted(task.id);
+    completeTask(task.id);
   }
 
   function handleEdit() {
     setEditMode(true);
-    setText(task.text);
+    setText(task.task);
   }
 
   function handleSave() {
@@ -32,7 +32,7 @@ function TodoItem({ task, deleteTask, toggleCompleted, editTask }) {
           onChange={(e) => setText(e.target.value)}
         />
       ) : (
-        <p className={task.completed ? 'completed' : ''}>{task.text}</p>
+        <p className={task.completed ? 'completed' : ''}>{task.task}</p>
       )}
       <button
         className={`edit-save-button ${editMode ? 'save' : 'edit'}`}
