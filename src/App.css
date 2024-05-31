@@ -1,5 +1,3 @@
-/* App.css */
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -14,13 +12,13 @@ body {
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  text-align: center; /* Center the title and content */
+  text-align: center;
 }
 
 h1 {
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px; /* Space below the title */
+  margin-bottom: 20px;
 }
 
 .todo-list {
@@ -34,6 +32,7 @@ h1 {
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .todo-item:last-child {
@@ -61,8 +60,15 @@ h1 {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 4px;
+  margin-left: 5px;
 }
 
+.todo-item button.details-button {
+  background: turquoise;
+}
+.todo-item button.details-button:hover{
+  background: darkcyan;
+}
 .todo-item button:hover {
   background: #ff1c1c;
 }
@@ -82,6 +88,21 @@ h1 {
 
 .todo-item .edit-save-button:hover {
   background: #218838;
+}
+
+.details {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.details p {
+  margin: 5px 0;
 }
 
 input[type="text"] {
@@ -105,6 +126,6 @@ button:hover {
   background: #218838;
 }
 
-.add-task{
+.add-task {
   margin-top: 10px;
 }
