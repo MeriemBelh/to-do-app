@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function TodoItem({ task, deleteTask, completeTask, editTask }) {
+function TodoItem({ task, deleteTask, completeTask, updateTask }) {
   const [editMode, setEditMode] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [text, setText] = useState(task.task);
@@ -15,7 +15,7 @@ function TodoItem({ task, deleteTask, completeTask, editTask }) {
   }
 
   function handleSave() {
-    editTask(task.id, text);
+    updateTask(task.id, text);
     setEditMode(false);
   }
 
@@ -52,7 +52,7 @@ function TodoItem({ task, deleteTask, completeTask, editTask }) {
         Details
       </button>
       {showDetails && (
-        <div className="details">
+        <div className="details" style={{ background: 'white', padding: '10px', borderRadius: '5px', marginTop: '10px' }}>
           <p>ID: {task.id}</p>
           <p>Task: {task.task}</p>
           <p>Status: {task.completed ? 'Completed' : 'Not Completed'}</p>
